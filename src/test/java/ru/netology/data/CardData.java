@@ -9,9 +9,9 @@ import lombok.Value;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CardData {
-  private   String cardNumber;
-   private String name;
-   private String month;
+    private String cardNumber;
+    private String name;
+    private String month;
     private String year;
- private    String cvv;
+    private String cvv;
 }
