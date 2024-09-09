@@ -37,6 +37,144 @@ public class AqaShopTest {
 
     @Test
 
+    public void successBuy(){
+
+
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.successBuy();
+
+    }
+
+    @Test
+    void BuySendWithInvalidStatus(){
+
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.blockStatus();
+    }
+
+    @Test
+    void BuySendWithExpired1(){
+
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.expired1();
+    }
+
+    @Test
+    void BuySendWithExpired2(){
+
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.expired2();
+    }
+
+    @Test
+    void BuySendWithTooFarYear(){
+
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.notTrueYear();
+    }
+
+    @Test
+    void buySendWithJustFirstName(){
+
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.justFirstName();
+    }
+    @Test
+    void buySendWithCyrillicName(){
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.nameOnCyrillic();
+    }
+
+    @Test
+    void buySendWithNameWithDigit() {
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.nameWithDigit();
+    }
+
+    @Test
+    void buySendWithNameWithSymbol() {
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.nameWithSymbol();
+    }
+
+    @Test
+    void buySendWithIncorrectCvv(){
+
+            var mainPage = new MainPage();
+            mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.invalidCvv();
+    }
+
+    @Test
+    void buySendWithBlankName(){
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.blankName();
+    }
+
+    @Test
+    void buySendWithBlankNumber(){
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.blankNumber();
+
+    }
+
+    @Test
+    void buySendWithBlankMonth(){
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.blankMonth();
+    }
+
+    @Test
+    void buySendWithBlankYear(){
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.blankYear();
+    }
+
+    @Test
+    void buySendWithBlankCvv(){
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.blankCvv();
+    }
+
+    @Test
+    void buySendBlankForm(){
+        var mainPage = new MainPage();
+        mainPage.payByCard();
+        var buy = new BuyPage();
+        buy.blankForm();
+    }
+
+    @Test
+
     public void successBuyCredit(){
 
 
@@ -48,7 +186,7 @@ public class AqaShopTest {
     }
 
     @Test
-    void sendWithInvalidStatus(){
+    void sendCreditWithInvalidStatus(){
 
         var mainPage = new MainPage();
         mainPage.payByCredit();
@@ -57,7 +195,7 @@ public class AqaShopTest {
     }
 
     @Test
-    void sendWithExpired1(){
+    void sendCreditWithExpired1(){
 
         var mainPage = new MainPage();
         mainPage.payByCredit();
@@ -66,7 +204,7 @@ public class AqaShopTest {
     }
 
     @Test
-    void sendWithExpired2(){
+    void sendCreditWithExpired2(){
 
         var mainPage = new MainPage();
         mainPage.payByCredit();
@@ -75,7 +213,7 @@ public class AqaShopTest {
     }
 
     @Test
-    void sendWithTooFarYear(){
+    void sendCreditWithTooFarYear(){
 
         var mainPage = new MainPage();
         mainPage.payByCredit();
@@ -84,7 +222,7 @@ public class AqaShopTest {
     }
 
     @Test
-    void sendWithJustFirstName(){
+    void sendCreditWithJustFirstName(){
 
         var mainPage = new MainPage();
         mainPage.payByCredit();
@@ -92,7 +230,7 @@ public class AqaShopTest {
         credit.justFirstName();
     }
     @Test
-    void sendWithCyrillicName(){
+    void sendCreditWithCyrillicName(){
         var mainPage = new MainPage();
         mainPage.payByCredit();
         var credit = new CreditPage();
@@ -100,7 +238,7 @@ public class AqaShopTest {
     }
 
     @Test
-    void sendWithNameWithDigit() {
+    void sendCreditWithNameWithDigit() {
         var mainPage = new MainPage();
         mainPage.payByCredit();
         var credit = new CreditPage();
@@ -108,7 +246,7 @@ public class AqaShopTest {
     }
 
     @Test
-    void sendWithNameWithSymbol() {
+    void sendCreditWithNameWithSymbol() {
         var mainPage = new MainPage();
         mainPage.payByCredit();
         var credit = new CreditPage();
@@ -116,11 +254,61 @@ public class AqaShopTest {
     }
 
     @Test
-    void sendWithIncorrectCvv(){
+    void sendCreditWithIncorrectCvv(){
 
-            var mainPage = new MainPage();
-            mainPage.payByCredit();
-            var credit = new CreditPage();
-            credit.invalidCvv();
+        var mainPage = new MainPage();
+        mainPage.payByCredit();
+        var credit = new CreditPage();
+        credit.invalidCvv();
+    }
+
+    @Test
+    void sendCreditWithBlankName(){
+        var mainPage = new MainPage();
+        mainPage.payByCredit();
+        var credit = new CreditPage();
+        credit.blankName();
+    }
+
+    @Test
+    void sendCreditWithBlankNumber(){
+        var mainPage = new MainPage();
+        mainPage.payByCredit();
+        var credit = new CreditPage();
+        credit.blankNumber();
+
+    }
+
+    @Test
+    void sendCreditWithBlankMonth(){
+        var mainPage = new MainPage();
+        mainPage.payByCredit();
+        var credit = new CreditPage();
+        credit.blankMonth();
+    }
+
+    @Test
+    void sendCreditWithBlankYear(){
+        var mainPage = new MainPage();
+        mainPage.payByCredit();
+        var credit = new CreditPage();
+        credit.blankYear();
+    }
+
+    @Test
+    void sendCreditWithBlankCvv(){
+        var mainPage = new MainPage();
+        mainPage.payByCredit();
+        var credit = new CreditPage();
+        credit.blankCvv();
+    }
+
+    @Test
+    void sendCreditBlankForm(){
+        var mainPage = new MainPage();
+        mainPage.payByCredit();
+        var credit = new CreditPage();
+        credit.blankForm();
     }
 }
+

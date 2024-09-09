@@ -9,6 +9,7 @@ import ru.netology.data.CardGenerator;
 
 import java.time.Duration;
 
+import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
@@ -159,5 +160,55 @@ public class CreditPage {
         cvv.sendKeys(invalidUser10.getCvv());
         send.click();
         errorSend.shouldBe(Condition.visible, Duration.ofSeconds(15));
+    }
+
+    public void blankNumber(){
+        month.sendKeys(validUser.getMonth());
+        year.sendKeys(validUser.getYear());
+        name.sendKeys(validUser.getName());
+        cvv.sendKeys(validUser.getCvv());
+        send.click();
+        $(withText("Поле обязательно для заполнения")).shouldBe(Condition.visible);
+    }
+
+    public void blankMonth(){
+        cardNumber.sendKeys(validUser.getCardNumber());
+        year.sendKeys(validUser.getYear());
+        name.sendKeys(validUser.getName());
+        cvv.sendKeys(validUser.getCvv());
+        send.click();
+        $(withText("Поле обязательно для заполнения")).shouldBe(Condition.visible);
+    }
+
+    public void blankYear(){
+        cardNumber.sendKeys(validUser.getCardNumber());
+        month.sendKeys(validUser.getMonth());
+        name.sendKeys(validUser.getName());
+        cvv.sendKeys(validUser.getCvv());
+        send.click();
+        $(withText("Поле обязательно для заполнения")).shouldBe(Condition.visible);
+    }
+
+    public void blankName(){
+        cardNumber.sendKeys(validUser.getCardNumber());
+        month.sendKeys(validUser.getMonth());
+        year.sendKeys(validUser.getYear());
+        cvv.sendKeys(validUser.getCvv());
+        send.click();
+        $(withText("Поле обязательно для заполнения")).shouldBe(Condition.visible);
+    }
+
+    public void blankCvv(){
+        cardNumber.sendKeys(validUser.getCardNumber());
+        month.sendKeys(validUser.getMonth());
+        year.sendKeys(validUser.getYear());
+        name.sendKeys(validUser.getName());
+        send.click();
+        $(withText("Поле обязательно для заполнения")).shouldBe(Condition.visible);
+    }
+
+    public void blankForm(){
+        send.click();
+        $$(withText("Поле обязательно для заполнения")).shouldHave(size(5));
     }
 }
